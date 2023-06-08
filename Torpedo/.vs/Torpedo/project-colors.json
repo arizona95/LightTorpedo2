@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "69d1a0d0-0d02-545e-b95c-ee79cd66eb0d": {
+      "ProjectGuid": "69d1a0d0-0d02-545e-b95c-ee79cd66eb0d",
+      "DisplayName": "Assembly-CSharp",
+      "ColorIndex": 0
+    },
+    "7215f181-c55d-0d78-2fd3-1e8fe5142e53": {
+      "ProjectGuid": "7215f181-c55d-0d78-2fd3-1e8fe5142e53",
+      "DisplayName": "Crest.Examples",
+      "ColorIndex": 1
+    },
+    "d3ef51fd-9b4f-4af3-c473-16921a40d35a": {
+      "ProjectGuid": "d3ef51fd-9b4f-4af3-c473-16921a40d35a",
+      "DisplayName": "Crest",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

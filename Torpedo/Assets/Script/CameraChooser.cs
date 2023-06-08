@@ -23,7 +23,7 @@ public class CameraChooser : MonoBehaviour
         SubmarineCamera = GameObject.Find("Submarine").transform.Find("Camtarget").transform.Find("Camera").gameObject;
         SubmarineOverCamera = GameObject.Find("Submarine").transform.Find("OverCamera").gameObject;
         RightUpTurretCamera = GameObject.Find("RightUpTurret").transform.Find("Camtarget").transform.Find("Camera").gameObject;
-        Torpendo1Camera1 = GameObject.Find("Torpendo").transform.Find("Torpendo1").transform.Find("Camtarget").transform.Find("Camera").gameObject;
+        Torpendo1Camera1 = GameObject.Find("Torpendo").transform.Find("Torpendo1").transform.Find("body").transform.Find("Camera").gameObject;
         Torpendo1OverCamera1 = GameObject.Find("Torpendo").transform.Find("Torpendo1").transform.Find("OverCamera").gameObject;
 
     }

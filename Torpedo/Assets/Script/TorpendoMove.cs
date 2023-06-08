@@ -5,8 +5,12 @@ using UnityEngine;
 public class TorpendoMove : MonoBehaviour
 {
     Rigidbody rigid;
-    public int torpendoSpeed = 200;
+    public float firstSpeed = 200;
+    public float secondSpeed = 200;
+    public float roundSpeed = 10;
     float timer;
+    public GameObject newParent;
+    public GameObject objectToMove;
     // Start is called before the first frame update
 
 
@@ -14,31 +18,38 @@ public class TorpendoMove : MonoBehaviour
     {
         timer = 0;
         rigid = GetComponent<Rigidbody>();
-        rigid.AddForce(transform.forward * 100000);
+        objectToMove.transform.SetParent(newParent.transform);
     }
+
 
 
 
     // Update is called once per frame
     void Update()
     {
+        if (timer >=0 && timer < 0.1)
+        {
 
-        if (timer > 30)
+            rigid.AddForce(transform.up * firstSpeed * Time.deltaTime);
+        }
+        else if(timer >= 0.1 && timer < 10)
+        {
+            rigid.AddForce(transform.up * secondSpeed * Time.deltaTime);
+        }
+        else if (timer >= 10 && timer <300)
+        {
+            rigid.AddForce(transform.up * secondSpeed * Time.deltaTime);
+            //rigid.AddForce(transform.right*2000);
+           
+            transform.Rotate(Vector3.forward * roundSpeed * Time.deltaTime);
+        }
+        else if (timer > 300)
         {
             gameObject.SetActive(false);
             GameObject.Find("SceneManager").GetComponent<CameraChooser>().SelectCamera("q");
         }
 
-        if (timer < 10)
-        {
-            rigid.AddForce(transform.forward * torpendoSpeed);
-        }
-        else
-        {
-            rigid.AddForce(transform.forward * torpendoSpeed);
-            //rigid.AddForce(transform.right*200);
-            transform.Rotate(Vector3.up * 20 * Time.deltaTime);
-        }
+        
         
         timer += Time.deltaTime;
     }
